@@ -1,158 +1,174 @@
-\# Netflix Content Library Analysis
+# Netflix Content Library Analysis
 
+## Live Dashboard
 
+[View the Interactive Streamlit Dashboard](https://netflixanalysis-9oujhdjb7w3rmbygblnrtt.streamlit.app/)
 
-\## Project Overview
+## GitHub Repository
 
+This repository contains the complete analysis notebook, Streamlit dashboard,
+dataset, and project documentation.
 
+---
+
+## 1. Project Overview
 
 This project analyzes Netflix's publicly listed content catalog to understand
+its content growth, content types, genres, and geographic distribution.
 
-content growth, content types, genres, and geographic distribution.
+The analysis focuses on three key questions:
 
+1. How has Netflix's content library changed over time?
+2. What types and genres dominate Netflix's content library?
+3. Which countries contribute the most titles?
 
+---
 
-\## Research Questions
+## 2. Dataset
 
+The project uses the **Netflix Movies and TV Shows** dataset available through
+Kaggle.
 
+The dataset contains information about Netflix titles, including:
 
-1\. How has Netflix's content library changed over time?
+- Title
+- Content type
+- Director
+- Cast
+- Country
+- Date added
+- Release year
+- Rating
+- Duration
+- Genre/category
+- Description
 
-2\. What types and genres dominate Netflix's content library?
+Dataset source:
 
-3\. Which countries contribute the most titles?
+https://www.kaggle.com/datasets/shivamb/netflix-shows
 
+---
 
+## 3. Tools and Technologies
 
-\## Dataset
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Streamlit
+- Jupyter Notebook / Google Colab
 
+---
 
+## 4. Data Cleaning
 
-The project uses the Netflix Movies and TV Shows dataset.
+The following preprocessing steps were performed:
 
+- Removed duplicate records.
+- Converted `date_added` into datetime format.
+- Created an `added_year` column for time-based analysis.
+- Created an `added_month` column.
+- Handled missing categorical values by replacing them with `Unknown`.
+- Split multiple genres into individual categories for genre analysis.
+- Split multiple countries into individual categories for geographic analysis.
 
+These steps were performed to improve data consistency and make the dataset
+suitable for exploratory analysis.
 
-\## Tools Used
+---
 
+## 5. Analysis and Research Questions
 
+### Question 1: How has Netflix's content library changed over time?
 
-\- Python
+The number of titles added to Netflix was analyzed by year using the
+`date_added` field.
 
-\- Pandas
+**Key finding:**
 
-\- NumPy
+The number of titles added varied across years, with the highest number of
+titles added in **2019**. This indicates that Netflix's catalog expansion
+was not uniform over time.
 
-\- Matplotlib
+---
 
-\- Seaborn
+### Question 2: What types and genres dominate Netflix's content library?
 
-\- Streamlit
+The analysis compared Movies and TV Shows and examined the most frequently
+listed genres.
 
-\- Google Colab / Jupyter Notebook
+**Key finding:**
 
+Movies represented approximately **69.68%** of the catalog, while TV Shows
+represented approximately **30.32**.
 
+The most frequently listed genre was **International Movie**, followed by **Drama**
+and **Comedies**.
 
-\## Data Cleaning
+These results indicate the genres with the strongest representation in the
+publicly listed catalog.
 
+---
 
+### Question 3: Which countries contribute the most titles?
 
-The dataset was cleaned by:
-
-
-
-\- Removing duplicate records
-
-\- Converting `date_added` into datetime format
-
-\- Creating an `added_year` column
-
-\- Handling missing categorical values using `Unknown`
-
-
-
-\## Analysis
-
-
-
-\### Question 1: Content Growth
-
-
-
-Analyzed how the number of titles added to Netflix changed over time.
-
-
-
-\### Question 2: Content Types and Genres
-
-
-
-Compared Movies and TV Shows and identified the top genres.
-
-
-
-\### Question 3: Geographic Distribution
-
-
-
-Identified the countries most frequently associated with Netflix titles.
-
-
-
-\## Key Findings
-
-
-
-\- The number of Netflix titles added varied across the years. The highest
-
-number of titles was added in 2019, while other years showed lower
-
-levels of content additions. This indicates that Netflix's catalog
-
-expansion was not uniform over time.
-
-\- Movies represent 69.62% of the Netflix catalog, while TV Shows represent 30.38%. This shows that Movies/TV Shows form the larger share of the publicly listed catalog.Among the genres,       	International Movies is the most frequently listed category, followed by 	Dramas and Comedies. These genres therefore have a strong presence in Netflix's catalog.
-
-However, genre frequency should not be interpreted as popularity because the dataset does not contain viewer or streaming data.
-
-\- United Staes has the highest number of titles associated with it, followed by India and United kingdom. This indicates that Netflix's catalog has a strong geographic contribution from 	these countries.
-
-However, a title can be associated with multiple countries, so these counts represent title-country associations rather than unique productions.
-
-.
-
-
-
-\## Limitations
-
-
-
-\- The dataset represents catalog information rather than actual viewing data.
-
-\- It does not contain revenue, subscriber or profitability information.
-
-\- A title can be associated with multiple countries and genres.
-
-\- The dataset represents a historical snapshot and may not reflect the current
-
- Netflix catalog.
-
-
-
-\## How to Run the Dashboard
-
-
-
-Install the required packages:
-
-
-
-```bash
-
-pip install -r requirements.txt
-
-
-
-
-
-
-
+The `country` field was analyzed to identify the countries most frequently
+associated with Netflix titles.
+
+**Key finding:**
+
+**united states** had the highest number of associated titles, followed by
+**India** and **United kingdom**.
+
+Because a single title can be associated with multiple countries, these
+figures represent title-country associations rather than unique productions.
+
+---
+
+## 6. Overall Insights
+
+The analysis shows that Netflix's publicly listed catalog has changed over
+time and contains a substantial mix of Movies and TV Shows.
+
+The catalog is also concentrated across several frequently represented
+genres and countries, providing insight into the composition and geographic
+distribution of Netflix's content.
+
+However, catalog representation should not be interpreted as audience
+preference or popularity because the dataset does not contain actual viewing
+statistics.
+
+---
+
+## 7. Assumptions and Limitations
+
+- The dataset represents Netflix's publicly listed catalog rather than actual
+  viewing activity.
+- The dataset does not contain streaming hours, revenue, subscriber behavior,
+  or profitability data.
+- A title can have multiple genres and countries, so these categories are not
+  mutually exclusive.
+- Missing information cannot always be reliably inferred and was therefore
+  handled conservatively.
+- The dataset represents a historical snapshot and may not reflect Netflix's
+  current catalog.
+- The analysis identifies patterns and associations but does not establish
+  causation.
+
+---
+
+## 8. Project Structure
+
+```text
+netflix-content-analysis/
+│
+├── data/
+│   └── netflix_titles.csv
+│
+├── notebooks/
+│   └── netflix_analysis.ipynb
+│
+├── app.py
+├── requirements.txt
+└── README.md
