@@ -62,9 +62,9 @@ The dataset was cleaned by:
 
 \- Removing duplicate records
 
-\- Converting `date\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_added` into datetime format
+\- Converting `date_added` into datetime format
 
-\- Creating an `added\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_year` column
+\- Creating an `added_year` column
 
 \- Handling missing categorical values using `Unknown`
 
@@ -88,9 +88,7 @@ Analyzed how the number of titles added to Netflix changed over time.
 
 Compared Movies and TV Shows and identified the top genres.
 
-&#x09;
 
-&#x09;
 
 \### Question 3: Geographic Distribution
 
@@ -98,9 +96,7 @@ Compared Movies and TV Shows and identified the top genres.
 
 Identified the countries most frequently associated with Netflix titles.
 
-&#x09;
 
-&#x09;
 
 \## Key Findings
 
@@ -108,19 +104,19 @@ Identified the countries most frequently associated with Netflix titles.
 
 \- The number of Netflix titles added varied across the years. The highest
 
-&#x09;number of titles was added in 2019, while other years showed lower
+number of titles was added in 2019, while other years showed lower
 
-&#x09;levels of content additions. This indicates that Netflix's catalog
+levels of content additions. This indicates that Netflix's catalog
 
-&#x09;expansion was not uniform over time.
+expansion was not uniform over time.
 
 \- Movies represent 69.62% of the Netflix catalog, while TV Shows represent 30.38%. This shows that Movies/TV Shows form the larger share of the publicly listed catalog.Among the genres,       	International Movies is the most frequently listed category, followed by 	Dramas and Comedies. These genres therefore have a strong presence in Netflix's catalog.
 
-&#x09;However, genre frequency should not be interpreted as popularity because the dataset does not contain viewer or streaming data.
+However, genre frequency should not be interpreted as popularity because the dataset does not contain viewer or streaming data.
 
 \- United Staes has the highest number of titles associated with it, followed by India and United kingdom. This indicates that Netflix's catalog has a strong geographic contribution from 	these countries.
 
-&#x09;However, a title can be associated with multiple countries, so these counts represent title-country associations rather than unique productions.
+However, a title can be associated with multiple countries, so these counts represent title-country associations rather than unique productions.
 
 .
 
@@ -138,7 +134,7 @@ Identified the countries most frequently associated with Netflix titles.
 
 \- The dataset represents a historical snapshot and may not reflect the current
 
-&#x20; Netflix catalog.
+ Netflix catalog.
 
 
 
